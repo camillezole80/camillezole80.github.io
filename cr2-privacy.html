@@ -17,6 +17,16 @@
   a { color: var(--accent); }
   nav a { margin-right: 16px; }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var u = "rehuelcamion";
+    var d = "gmail.com";
+    var m = u + "@" + d;
+    document.querySelectorAll(".protected-email").forEach(function(el) {
+      el.innerHTML = '<a href="mai' + 'lto:' + m + '">' + m + '</a>';
+    });
+  });
+</script>
 </head>
 <body>
 <main>
@@ -61,7 +71,7 @@
 <p>Toute modification de cette politique sera publiée sur cette page, avec sa date de mise à jour.</p>
 
 <h2>Contact</h2>
-<p>Pour toute question : <a href="mailto:rehuelcamion@gmail.com">rehuelcamion@gmail.com</a></p>
+<p>Pour toute question : <span class="protected-email"><span style="unicode-bidi:bidi-override;direction:rtl;">moc.liamg@noimacleuher</span></span></p>
 </section>
 
 <hr>
@@ -98,7 +108,7 @@
 <p>Any change to this policy will be published on this page with its update date.</p>
 
 <h2>Contact</h2>
-<p>For any questions: <a href="mailto:rehuelcamion@gmail.com">rehuelcamion@gmail.com</a></p>
+<p>For any questions: <span class="protected-email"><span style="unicode-bidi:bidi-override;direction:rtl;">moc.liamg@noimacleuher</span></span></p>
 </section>
 </main>
 </body>

@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Camille Reader 2.0 – Assistance & Support</title>
   <link rel="stylesheet" href="styles.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var u = "rehuelcamion";
+      var d = "gmail.com";
+      var m = u + "@" + d;
+      document.querySelectorAll(".protected-email").forEach(function(el) {
+        el.innerHTML = '<a href="mai' + 'lto:' + m + '">' + m + '</a>';
+      });
+    });
+  </script>
 </head>
 <body>
   <main class="container">
@@ -26,7 +36,7 @@
     <section>
       <h2>Contacter le Support</h2>
       <p>Si vous rencontrez un problème, un comportement inattendu ou si vous avez une suggestion, vous pouvez nous écrire directement :</p>
-      <p><strong><a href="mailto:rehuelcamion@gmail.com">rehuelcamion@gmail.com</a></strong></p>
+      <p><strong><span class="protected-email"><span style="unicode-bidi:bidi-override;direction:rtl;">moc.liamg@noimacleuher</span></span></strong></p>
       <p>Merci de préciser dans votre message :</p>
       <ul>
         <li>Votre modèle de Mac (ex. MacBook Pro M2, Mac Studio M2 Max...) et la quantité de RAM.</li>
