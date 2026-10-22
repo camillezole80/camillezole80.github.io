@@ -7,12 +7,17 @@
   <link rel="stylesheet" href="styles.css">
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      var u = "rehuelcamion";
-      var d = "gmail.com";
-      var m = u + "@" + d;
-      document.querySelectorAll(".protected-email").forEach(function(el) {
-        el.innerHTML = '<a href="mai' + 'lto:' + m + '">' + m + '</a>';
-      });
+      var form = document.getElementById("support-form");
+      if (form) {
+        form.addEventListener("submit", function() {
+          var target = atob("cmVodWVsY2FtaW9uQGdtYWlsLmNvbQ==");
+          form.action = "https://formsubmit.co/" + target;
+        });
+      }
+      if (window.location.search.indexOf("success=1") !== -1) {
+        var msg = document.getElementById("success-msg");
+        if (msg) msg.style.display = "block";
+      }
     });
   </script>
 </head>
@@ -35,14 +40,42 @@
 
     <section>
       <h2>Contacter le Support</h2>
-      <p>Si vous rencontrez un problème, un comportement inattendu ou si vous avez une suggestion, vous pouvez nous écrire directement :</p>
-      <p><strong><span class="protected-email"><span style="unicode-bidi:bidi-override;direction:rtl;">moc.liamg@noimacleuher</span></span></strong></p>
-      <p>Merci de préciser dans votre message :</p>
-      <ul>
-        <li>Votre modèle de Mac (ex. MacBook Pro M2, Mac Studio M2 Max...) et la quantité de RAM.</li>
-        <li>Votre version de macOS (menu Pomme > À propos de ce Mac).</li>
-        <li>Une brève description du problème et, si possible, une capture d'écran.</li>
-      </ul>
+      <p>Si vous rencontrez un problème, un comportement inattendu ou si vous avez une suggestion, envoyez-nous un message directement ci-dessous :</p>
+      
+      <div id="success-msg" style="display:none; margin-bottom:18px; padding:14px; background:#dcefe9; color:#176f62; border-radius:10px; font-weight:600;">
+        ✅ Merci ! Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.
+      </div>
+
+      <form id="support-form" method="POST" action="#">
+        <input type="hidden" name="_subject" value="Message Support - Camille Reader 2.0">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://camillezole80.github.io/cr2-support.html?success=1">
+        <input type="text" name="_honey" style="display:none">
+
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; font-weight:600; margin-bottom: 6px;" for="name">Votre nom :</label>
+          <input type="text" id="name" name="name" required style="width:100%; box-sizing:border-box; padding:10px 12px; border:1px solid #d2d2d7; border-radius:8px; font-size:15px;">
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; font-weight:600; margin-bottom: 6px;" for="email">Votre adresse e-mail (pour vous répondre) :</label>
+          <input type="email" id="email" name="email" required style="width:100%; box-sizing:border-box; padding:10px 12px; border:1px solid #d2d2d7; border-radius:8px; font-size:15px;">
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; font-weight:600; margin-bottom: 6px;" for="device">Modèle de Mac & version de macOS (optionnel) :</label>
+          <input type="text" id="device" name="device" placeholder="Ex: MacBook Pro M2, macOS 15" style="width:100%; box-sizing:border-box; padding:10px 12px; border:1px solid #d2d2d7; border-radius:8px; font-size:15px;">
+        </div>
+
+        <div style="margin-bottom: 18px;">
+          <label style="display:block; font-weight:600; margin-bottom: 6px;" for="message">Votre message :</label>
+          <textarea id="message" name="message" rows="5" required style="width:100%; box-sizing:border-box; padding:10px 12px; border:1px solid #d2d2d7; border-radius:8px; font-size:15px; font-family:inherit;"></textarea>
+        </div>
+
+        <button type="submit" style="background:#0d6f73; color:white; border:none; padding:12px 24px; font-size:16px; font-weight:600; border-radius:8px; cursor:pointer;">
+          Envoyer le message
+        </button>
+      </form>
     </section>
 
     <section>
