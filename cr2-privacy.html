@@ -20,84 +20,90 @@
 </head>
 <body>
 <main>
-<nav class="muted"><a href="#fr">Français</a><a href="#en">English</a><a href="cr2-support.html">Assistance & Contact</a></nav>
+<nav class="muted"><a href="#fr">Français</a><a href="#en">English</a><a href="cr2-support.html">Assistance, FAQ & Contact</a></nav>
 
 <section id="fr" lang="fr">
 <h1>Politique de confidentialité de Camille Reader 2.0</h1>
-<p class="muted">Dernière mise à jour : 21 octobre 2026</p>
+<p class="muted">Dernière mise à jour : 2 novembre 2026</p>
 
-<p>Camille Reader 2.0 est une application macOS de lecture à voix haute, développée par Jethro Camille. Cette page explique quelles données l'application traite et dans quelles conditions.</p>
+<p>Camille Reader 2.0 est une application macOS de lecture à voix haute et d'export de livres audio, développée par Jethro Camille. Cette page explique quelles données l'application traite et dans quelles conditions.</p>
 
 <h2>En résumé</h2>
-<p>Camille Reader 2.0 ne collecte aucune donnée pour son développeur : pas de compte, pas d'analyse d'usage, pas de publicité, pas de suivi. Tout fonctionne sur votre Mac, sauf si vous choisissez vous-même un service de voix en ligne.</p>
+<p>Camille Reader 2.0 ne collecte aucune donnée pour son développeur : pas de compte utilisateur, pas d'analyse d'usage, pas de publicité, pas de suivi. Tout fonctionne localement sur votre Mac, sauf si vous choisissez vous-même de faire appel à un service tiers en ligne.</p>
 
 <h2>Vos livres et documents</h2>
-<p>Les documents que vous importez, vos signets, surlignages et réglages sont enregistrés uniquement sur votre Mac, dans le dossier de l'application.</p>
+<p>Les documents que vous importez (EPUB, PDF, Word, texte, etc.), vos signets, surlignages et réglages sont enregistrés uniquement sur votre Mac, dans le conteneur sécurisé de l'application. Si vous activez la synchronisation iCloud facultative, la position de lecture et vos signets sont synchronisés via votre propre compte Apple CloudKit privé.</p>
 
 <h2>Synthèse vocale locale (par défaut)</h2>
-<p>Le moteur de voix Chatterbox et les voix système de macOS fonctionnent entièrement sur votre Mac. Aucun texte ni audio n'est envoyé sur Internet.</p>
+<p>Le moteur d'intelligence artificielle Chatterbox et les voix système de macOS fonctionnent entièrement et exclusivement sur votre Mac. Aucun texte ni fichier audio n'est envoyé sur Internet dans ce mode par défaut.</p>
 
 <h2>Nettoyage des livres</h2>
-<p>« Nettoyer le livre » applique des règles sur votre Mac. « Nettoyage lent et profond » utilise le modèle d'Apple Intelligence installé sur votre Mac (macOS 26 et suivants) : le texte n'est pas envoyé à un serveur par Camille Reader 2.0.</p>
+<p>« Nettoyer le livre » applique des règles localement sur votre Mac. « Nettoyage lent et profond » utilise le modèle d'Apple Intelligence installé sur votre Mac (macOS 26 et suivants) : le texte n'est pas envoyé à un serveur par Camille Reader 2.0.</p>
 
 <h2>Microphone et voix clonées</h2>
-<p>Le microphone sert uniquement à enregistrer un court extrait de voix pour le clonage local. Les voix enregistrées ou importées restent sur votre Mac et ne sont jamais transmises au développeur ni à un tiers. Vous devez confirmer avoir le droit d'utiliser une voix avant de l'ajouter.</p>
+<p>Le microphone sert uniquement à enregistrer un court extrait de voix pour le clonage local dans le Studio de voix. Les voix enregistrées ou importées restent sur votre Mac et ne sont jamais transmises au développeur ni à un tiers. Vous devez confirmer avoir le droit d'utiliser une voix avant de l'ajouter.</p>
 
 <h2>Services de voix en ligne (facultatif)</h2>
-<p>Si vous choisissez le moteur « API TTS externe », Camille Reader 2.0 vous demande votre accord, puis envoie le texte des passages lus au service que vous avez choisi, avec votre propre clé d'accès, pour obtenir l'audio. Services proposés : OpenAI, ElevenLabs, Fish Audio, Microsoft Azure AI Speech, Google Cloud Text-to-Speech, ou un serveur que vous configurez vous-même. Camille Reader 2.0 peut aussi demander à ce service la liste des voix disponibles. Aucune autre donnée n'est transmise, et Camille Reader 2.0 ne garde aucune copie de ces échanges. Ces services appliquent leurs propres politiques de confidentialité :</p>
+<p>Si vous choisissez le moteur « API TTS externe », Camille Reader 2.0 vous demande votre accord, puis envoie le texte des passages lus au service que vous avez choisi, avec votre propre clé d'accès, pour obtenir l'audio. Services proposés : OpenAI, ElevenLabs, Fish Audio, Microsoft Azure AI Speech, Google Cloud Text-to-Speech, Gemini TTS, ou un serveur que vous configurez vous-même. Camille Reader 2.0 peut aussi demander à ce service la liste des voix disponibles. Aucune autre donnée n'est transmise, et Camille Reader 2.0 ne garde aucune copie de ces échanges. Ces services appliquent leurs propres politiques de confidentialité :</p>
 <ul>
   <li>OpenAI : <a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a></li>
   <li>ElevenLabs : <a href="https://elevenlabs.io/privacy-policy">elevenlabs.io/privacy-policy</a></li>
   <li>Fish Audio : <a href="https://fish.audio/privacy/">fish.audio/privacy</a></li>
   <li>Microsoft : <a href="https://privacy.microsoft.com/privacystatement">privacy.microsoft.com/privacystatement</a></li>
-  <li>Google : <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+  <li>Google / Gemini : <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
 </ul>
 <p>Vos clés d'accès sont conservées dans le Trousseau de macOS et ne sont envoyées qu'au service concerné.</p>
 
+<h2>Mise en scène par IA (facultatif)</h2>
+<p>Si vous utilisez la mise en scène (directeur d'expression IA), le texte du livre concerné est envoyé, par morceaux, au fournisseur d'intelligence artificielle que vous avez choisi (OpenAI, Anthropic, DeepSeek, Mistral, Groq ou Google), directement depuis votre Mac et avec votre propre clé API, pour y placer des balises d'interprétation. Le développeur ne reçoit rien. Les conditions de ce fournisseur s'appliquent.</p>
+
 <h2>Enfants</h2>
-<p>Camille Reader 2.0 ne collecte aucune donnée, y compris celles d'enfants.</p>
+<p>Camille Reader 2.0 ne collecte aucune donnée personnelle, y compris celles d'enfants.</p>
 
 <h2>Modifications</h2>
-<p>Toute modification de cette politique sera publiée sur cette page, avec sa date de mise à jour.</p>
+<p>Toute modification de cette politique sera publiée sur cette page avec sa date de mise à jour.</p>
 
-<h2>Contact</h2>
-<p>Pour toute question : utilisez le <a href="cr2-support.html">formulaire de contact sur notre page d'assistance</a>.</p>
+<h2>Contact & Assistance</h2>
+<p>Pour toute question ou demande de support : utilisez le <a href="cr2-support.html">formulaire de contact sur notre page d'assistance</a>.</p>
 </section>
 
 <hr>
 
 <section id="en" lang="en">
 <h1>Camille Reader 2.0 Privacy Policy</h1>
-<p class="muted">Last updated: October 21, 2026</p>
+<p class="muted">Last updated: November 2, 2026</p>
 
-<p>Camille Reader 2.0 is a macOS read-aloud app developed by Jethro Camille. This page explains what data the app handles and when.</p>
+<p>Camille Reader 2.0 is a macOS read-aloud and audiobook creation app developed by Jethro Camille. This page explains what data the app handles and under what conditions.</p>
 
 <h2>Summary</h2>
-<p>Camille Reader 2.0 collects no data for its developer: no account, no analytics, no advertising, no tracking. Everything runs on your Mac unless you choose an online voice service yourself.</p>
+<p>Camille Reader 2.0 collects no data for its developer: no user account, no analytics, no advertising, no tracking. Everything runs locally on your Mac unless you choose an online third-party service yourself.</p>
 
 <h2>Your books and documents</h2>
-<p>The documents you import, your bookmarks, highlights and settings are stored only on your Mac, in the app's folder.</p>
+<p>The documents you import (EPUB, PDF, Word, text, etc.), your bookmarks, highlights, and settings are stored only on your Mac, inside the app's secure container. If you enable optional iCloud synchronization, reading position and bookmarks are synchronized via your own private Apple CloudKit account.</p>
 
 <h2>On-device speech (default)</h2>
-<p>The Chatterbox voice engine and the macOS system voices run entirely on your Mac. No text or audio is sent over the Internet.</p>
+<p>The Chatterbox voice engine and macOS system voices run entirely and exclusively on your Mac. No text or audio is sent over the Internet in this default mode.</p>
 
 <h2>Book cleaning</h2>
-<p>"Clean the book" applies rules on your Mac. "Slow and deep cleaning" uses the Apple Intelligence model installed on your Mac (macOS 26 and later): Camille Reader 2.0 does not send the text to any server.</p>
+<p>"Clean the book" applies rules locally on your Mac. "Slow and deep cleaning" uses the Apple Intelligence model installed on your Mac (macOS 26 and later): Camille Reader 2.0 does not send the text to any server.</p>
 
 <h2>Microphone and cloned voices</h2>
-<p>The microphone is used only to record a short voice sample for on-device cloning. Recorded or imported voices stay on your Mac and are never sent to the developer or any third party. You must confirm that you have the right to use a voice before adding it.</p>
+<p>The microphone is used only to record a short voice sample for on-device cloning in the Voice Studio. Recorded or imported voices stay on your Mac and are never sent to the developer or any third party. You must confirm that you have the right to use a voice before adding it.</p>
 
 <h2>Online voice services (optional)</h2>
-<p>If you choose the "external TTS API" engine, Camille Reader 2.0 asks for your consent, then sends the text of the passages being read to the service you selected, using your own access key, to get the audio back. Available services: OpenAI, ElevenLabs, Fish Audio, Microsoft Azure AI Speech, Google Cloud Text-to-Speech, or a server you configure yourself. Camille Reader 2.0 may also ask that service for its list of available voices. No other data is sent, and Camille Reader 2.0 keeps no copy of these exchanges. These services apply their own privacy policies (links above).</p>
-<p>Your access keys are stored in the macOS Keychain and are only sent to the service they belong to.</p>
+<p>If you choose the "external TTS API" engine, Camille Reader 2.0 asks for your consent, then sends the text of the passages being read to the service you selected, using your own access key, to receive audio. Supported services include OpenAI, ElevenLabs, Fish Audio, Microsoft Azure AI Speech, Google Cloud Text-to-Speech, Gemini TTS, or a custom server you configure yourself. Camille Reader 2.0 may also query the service for available voices. No other data is transmitted, and Camille Reader 2.0 keeps no copy of these requests. These services apply their own privacy policies (links above).</p>
+<p>Your access keys are stored securely in the macOS Keychain and are only sent to the corresponding service.</p>
+
+<h2>AI Staging (optional)</h2>
+<p>If you use AI staging, book text passages are sent in chunks directly from your Mac to your selected AI provider (OpenAI, Anthropic, DeepSeek, Mistral, Groq, or Google) using your own API key to insert expressive performance tags. The developer receives nothing. The chosen provider's terms apply.</p>
 
 <h2>Children</h2>
-<p>Camille Reader 2.0 collects no data, including from children.</p>
+<p>Camille Reader 2.0 collects no personal data, including from children.</p>
 
 <h2>Changes</h2>
-<p>Any change to this policy will be published on this page with its update date.</p>
+<p>Any updates to this policy will be published on this page with an updated date.</p>
 
-<h2>Contact</h2>
+<h2>Contact & Support</h2>
 <p>For any questions: please use the <a href="cr2-support.html">contact form on our support page</a>.</p>
 </section>
 </main>

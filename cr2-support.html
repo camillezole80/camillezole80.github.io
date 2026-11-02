@@ -3,8 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Camille Reader 2.0 – Assistance & Support</title>
+  <title>Camille Reader 2.0 – Assistance, FAQ & Support</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .faq-item {
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    .faq-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .faq-q {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #176f62;
+      margin-bottom: 8px;
+    }
+    .badge-tip {
+      display: inline-block;
+      background: #eef7f4;
+      color: #12584d;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .tip-box {
+      background: #f0f7f6;
+      border-left: 4px solid #176f62;
+      padding: 14px 16px;
+      border-radius: 0 10px 10px 0;
+      margin: 12px 0;
+    }
+  </style>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var form = document.getElementById("support-form");
@@ -25,22 +60,84 @@
   <main class="container">
     <p class="eyebrow">Camille Reader 2.0</p>
     <h1>Assistance & Support</h1>
-    <p class="lead">Guide d'utilisation, questions fréquentes et aide pour Camille Reader 2.0 sur Mac.</p>
+    <p class="lead">Guide d'utilisation, foire aux questions (FAQ) et aide pour Camille Reader 2.0 sur Mac.</p>
 
+    <!-- SECTION FAQ -->
     <section>
-      <h2>Questions fréquentes (FAQ)</h2>
-      <ul>
-        <li><strong>Configuration minimale</strong> : Mac Apple Silicon (puce M2 ou ultérieure) avec 16 Go de mémoire unifiée minimum, sous macOS 14.0 Sonoma ou ultérieur.</li>
-        <li><strong>Premier lancement</strong> : Le premier démarrage de Chatterbox copie le cache du modèle dans le conteneur sécurisé de l'application (durée typique : 30 à 60 secondes).</li>
-        <li><strong>Synthèse vocale locale vs Système</strong> : Par défaut, Chatterbox fonctionne à 100% en local. Vous pouvez aussi basculer sur les voix système légères de macOS (AVSpeechSynthesizer) dans les réglages du moteur.</li>
-        <li><strong>Export Livre Audio</strong> : Exportez vos livres en .m4b ou .mp3 directement depuis le menu d'export en sélectionnant le document entier ou une plage de chapitres.</li>
-        <li><strong>Nettoyage profond</strong> : La fonction de nettoyage profond nécessite macOS 26 avec Apple Intelligence activé sur votre Mac.</li>
-      </ul>
+      <h2>Foire Aux Questions (FAQ)</h2>
+
+      <!-- FAQ 1: M1 / M2 et Export M4B -->
+      <div class="faq-item">
+        <div class="faq-q">La lecture en direct saccade ou ralentit mon Mac (M1 / M2) : que faire ?</div>
+        <p>Le moteur d'intelligence artificielle locale Chatterbox (MLX) génère la parole en temps réel directement sur le processeur et la puce graphique (GPU) de votre Mac. Sur un Mac équipé d'une puce <strong>M1 ou M2</strong> (en particulier avec 8 Go ou 16 Go de mémoire partagée avec d'autres applications ouvertes), cette charge de calcul instantanée peut provoquer des micro-pauses ou solliciter intensément les ventilateurs.</p>
+        
+        <div class="tip-box">
+          <strong>💡 Notre recommandation pour une écoute parfaitement fluide : Exportez en M4B !</strong><br>
+          Plutôt que d'écouter en calcul temps réel, utilisez la fonction <strong>« Exporter en livre audio » (.m4b)</strong> :
+          <ul style="margin: 8px 0 0; padding-left: 20px;">
+            <li>Votre Mac calcule la synthèse vocale en arrière-plan ou pendant la nuit.</li>
+            <li>Une fois le fichier <code>.m4b</code> créé, la lecture consomme <strong>0 % de ressource processeur</strong>, avec une fluidité absolue et zéro saccade.</li>
+            <li>Le fichier M4B intègre la couverture, les chapitres, le minutage exact des phrases pour le surlignage synchronisé, et peut s'écouter directement dans Camille Reader, dans l'application Apple Livres ou sur votre iPhone.</li>
+          </ul>
+        </div>
+        <p><em>Alternative instantanée :</em> Vous pouvez aussi basculer sur les <strong>Voix système de macOS</strong> (dans Réglages &gt; Moteur). Elles ne consomment quasiment aucune ressource système et se lancent immédiatement.</p>
+      </div>
+
+      <!-- FAQ 2: Durée de l'export -->
+      <div class="faq-item">
+        <div class="faq-q">Pourquoi l'exportation d'un livre audio complet prend-elle plusieurs heures ?</div>
+        <p>Contrairement à un convertisseur audio classique, Camille Reader 2.0 fait générer par un modèle d'IA neuronale locale chaque phonème, chaque respiration et chaque intonation.</p>
+        <p>Pour un ouvrage complet de 300 à 500 pages (représentant 8 à 15 heures d'écoute audio finale), <strong>l'export complet nécessite généralement plusieurs heures de calcul local</strong> selon la puissance de votre puce (M1, M2, M3, M4, Pro ou Max). C'est tout à fait normal : le calcul s'effectue intégralement sur votre machine sans faire appel à un serveur externe.</p>
+        <p><strong>Astuce :</strong> Vous pouvez exporter votre livre <strong>chapitre par chapitre</strong> pour une disponibilité immédiate, ou lancer l'export d'un livre entier en tâche de fond la nuit.</p>
+      </div>
+
+      <!-- FAQ 3: IA Générative et Hallucinations -->
+      <div class="faq-item">
+        <div class="faq-q">Pourquoi la voix bégaye-t-elle parfois ou prononce-t-elle un mot bizarrement (hallucinations) ?</div>
+        <p>Le moteur Chatterbox est une <strong>IA générative neuronale</strong>. Comme toute technologie générative, il ne lit pas un enregistrement figé mais prédit statistiquement les ondes sonores. Dans certaines situations, l'IA peut « halluciner » : trébucher sur un mot, répéter une syllabe, déformer une intonation ou produire un souffle inhabituel.</p>
+        <div class="tip-box">
+          <strong>⚠️ Impact de la Température et de l'Expressivité :</strong><br>
+          Les hallucinations surviennent plus fréquemment lorsque vous augmentez les curseurs <strong>« Expressivité »</strong> ou <strong>« Température »</strong> dans les réglages du moteur vocal. Plus l'expressivité est haute, plus l'IA prend de risques créatifs dans son intonation, ce qui augmente la probabilité de bégaiements ou d'inventions phonétiques.
+        </div>
+        <p><strong>Comment corriger ou limiter ces effets :</strong></p>
+        <ul>
+          <li><strong>Réduire l'expressivité :</strong> Réglez le curseur sur une valeur modérée (neutre / calme) pour les longues lectures narratives.</li>
+          <li><strong>Correction phonétique par mot :</strong> Faites un clic droit sur le mot mal prononcé &gt; <em>« Prononciation… »</em> pour imposer sa transcription phonétique exacte (par exemple remplacer un acronyme ou un nom propre complexe).</li>
+          <li><strong>Nettoyer le livre :</strong> Utilisez le menu <em>« Nettoyer le livre »</em> pour éliminer les appels de note, chiffres isolés et symboles typographiques qui perturbent le modèle d'IA.</li>
+        </ul>
+      </div>
+
+      <!-- FAQ 4: Nombre de voix par langue -->
+      <div class="faq-item">
+        <div class="faq-q">Combien de voix sont fournies par langue ?</div>
+        <p>Pour éviter les chiffres globaux trompeurs, voici le détail exact par langue :</p>
+        <p>Pour <strong>chaque langue</strong> prise en charge dans la galerie (français, anglais, allemand, espagnol, italien, portugais, néerlandais, russe, chinois, japonais, coréen), vous disposez de <strong>18 voix narratives dédiées</strong> :</p>
+        <ul>
+          <li><strong>6 profils de narrateurs :</strong> Femme adulte, Homme adulte, Femme enfant, Homme enfant, Femme aînée, Homme aîné.</li>
+          <li><strong>3 styles d'interprétation pour chaque profil :</strong> Normal, Roman immersif, et Chuchoté.</li>
+        </ul>
+        <p>À ces 18 voix par langue s'ajoutent <strong>13 voix expressives spéciales</strong> (émotions intenses : rire, sanglots, panique, voix rocailleuse, etc.) et le <strong>Studio de voix</strong>, qui vous permet d'enregistrer votre propre voix au micro pour créer des clones vocaux personnalisés à l'infini.</p>
+      </div>
+
+      <!-- FAQ 5: Essai 7 jours et Achat unique -->
+      <div class="faq-item">
+        <div class="faq-q">Comment fonctionne l'essai gratuit de 7 jours et le paiement ?</div>
+        <p>Camille Reader 2.0 est <strong>gratuit au téléchargement</strong> sur le Mac App Store. Lors du premier lancement, vous activez un <strong>essai gratuit de 7 jours</strong> qui vous donne accès à 100 % des fonctionnalités sans aucune restriction.</p>
+        <p>À la fin des 7 jours, vous pouvez débloquer l'application pour toujours via un <strong>achat unique, sans aucun abonnement</strong>. Si vous ne souhaitez pas acheter la version complète, aucun prélèvement n'est effectué et vos livres restent intacts dans l'application.</p>
+      </div>
+
+      <!-- FAQ 6: Synchronisation iPhone -->
+      <div class="faq-item">
+        <div class="faq-q">Comment synchroniser mes livres audio avec mon iPhone ?</div>
+        <p>Lorsque vous exportez un livre au format <code>.m4b</code>, Camille Reader 2.0 intègre automatiquement toutes les données de lecture (texte complet, minutage exact de chaque phrase, chapitres, signets et surlignages) <strong>directement dans le fichier audio M4B</strong>.</p>
+        <p>Il vous suffit d'envoyer ce fichier par AirDrop sur votre iPhone pour profiter de la lecture synchronisée dans l'application mobile compagnon. De plus, la synchronisation via iCloud CloudKit permet de synchroniser automatiquement votre position de lecture entre votre Mac et votre iPhone.</p>
+      </div>
     </section>
 
+    <!-- SECTION CONTACT -->
     <section>
       <h2>Contacter le Support</h2>
-      <p>Si vous rencontrez un problème, un comportement inattendu ou si vous avez une suggestion, envoyez-nous un message directement ci-dessous :</p>
+      <p>Vous rencontrez un comportement inattendu, une difficulté ou vous souhaitez nous suggérer une amélioration ? Envoyez-nous un message directement via le formulaire ci-dessous :</p>
       
       <div id="success-msg" style="display:none; margin-bottom:18px; padding:14px; background:#dcefe9; color:#176f62; border-radius:10px; font-weight:600;">
         ✅ Merci ! Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.
@@ -64,7 +161,7 @@
 
         <div style="margin-bottom: 14px;">
           <label style="display:block; font-weight:600; margin-bottom: 6px;" for="device">Modèle de Mac & version de macOS (optionnel) :</label>
-          <input type="text" id="device" name="device" placeholder="Ex: MacBook Pro M2, macOS 15" style="width:100%; box-sizing:border-box; padding:10px 12px; border:1px solid #d2d2d7; border-radius:8px; font-size:15px;">
+          <input type="text" id="device" name="device" placeholder="Ex: MacBook Air M1, MacBook Pro M2, macOS 15" style="width:100%; box-sizing:border-box; padding:10px 12px; border:1px solid #d2d2d7; border-radius:8px; font-size:15px;">
         </div>
 
         <div style="margin-bottom: 18px;">
@@ -78,9 +175,10 @@
       </form>
     </section>
 
+    <!-- SECTION CONFIDENTIALITE -->
     <section>
       <h2>Confidentialité</h2>
-      <p>La politique de confidentialité de l’application est disponible ici : <a href="cr2-privacy.html">Politique de confidentialité Camille Reader 2.0</a>.</p>
+      <p>Camille Reader 2.0 respecte scrupuleusement votre vie privée. Consultez notre <a href="cr2-privacy.html">Politique de confidentialité complète</a>.</p>
     </section>
   </main>
 </body>
