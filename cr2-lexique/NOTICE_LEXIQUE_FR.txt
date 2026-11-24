@@ -1,0 +1,14 @@
+ATTRIBUTION & LICENSE — cvf_lexique_fr.txt
+
+The pronunciation lexicon file `cvf_lexique_fr.txt` in this directory is derived from:
+
+  Lexique 3 (French lexical database)
+  Authors: Boris New, Christophe Pallier, Marc Brysbaert, Ludovic Ferrand
+  Original source: http://www.lexique.org/
+
+Original License: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+License text: https://creativecommons.org/licenses/by-sa/4.0/
+
+Modifications made by Camille Reader 2.0:
+- Extracted columns (orthographic form, phonemic base representation, latent liaison consonant) into a compact tab-separated lexicon (`cvf_lexique_fr.txt`) used for French morphological disambiguation and text normalization.
+- In accordance with CC BY-SA 4.0, the derived lexicon file `cvf_lexique_fr.txt` itself remains licensed under CC BY-SA 4.0.

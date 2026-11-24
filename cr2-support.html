@@ -66,29 +66,36 @@
     <section>
       <h2>Foire Aux Questions (FAQ)</h2>
 
-      <!-- FAQ 1: M1 / M2 et Export M4B -->
+      <!-- FAQ 1: M1 / M2, Supertonic 3 et Export M4B -->
       <div class="faq-item">
         <div class="faq-q">La lecture en direct saccade ou ralentit mon Mac (M1 / M2) : que faire ?</div>
-        <p>Le moteur d'intelligence artificielle locale Chatterbox (MLX) génère la parole en temps réel directement sur le processeur et la puce graphique (GPU) de votre Mac. Sur un Mac équipé d'une puce <strong>M1 ou M2</strong> (en particulier avec 8 Go ou 16 Go de mémoire partagée avec d'autres applications ouvertes), cette charge de calcul instantanée peut provoquer des micro-pauses ou solliciter intensément les ventilateurs.</p>
+        <p>Camille Reader 2.0 intègre désormais <strong>deux moteurs d'IA 100 % locaux</strong> aux profils très différents :</p>
+        <ul style="margin: 8px 0 12px; padding-left: 20px;">
+          <li><strong>Supertonic 3 (ONNX Runtime) :</strong> ultra-rapide et très léger en mémoire (~290 Mo de RAM), il fonctionne de façon parfaitement fluide en temps réel sur <strong>tous les Mac Apple Silicon, y compris M1 et M2 (8 Go)</strong>, dans 31 langues avec 10 voix intégrées.</li>
+          <li><strong>Chatterbox (MLX) :</strong> moteur de clonage vocal génératif plus lourd. Sur un Mac <strong>M1 ou M2</strong> (en particulier 8 Go ou 16 Go avec d'autres apps ouvertes), sa charge GPU/mémoire en temps réel peut provoquer des micro-pauses.</li>
+        </ul>
         
         <div class="tip-box">
-          <strong>💡 Notre recommandation pour une écoute parfaitement fluide : Exportez en M4B !</strong><br>
-          Plutôt que d'écouter en calcul temps réel, utilisez la fonction <strong>« Exporter en livre audio » (.m4b)</strong> :
+          <strong>💡 Pour profiter des voix Chatterbox de manière parfaitement fluide sur M1 / M2 : Exportez en M4B !</strong><br>
+          Plutôt que d'écouter Chatterbox en calcul temps réel, utilisez la fonction <strong>« Exporter en livre audio » (.m4b)</strong> ou passez sur <strong>Supertonic 3</strong> :
           <ul style="margin: 8px 0 0; padding-left: 20px;">
-            <li>Votre Mac calcule la synthèse vocale en arrière-plan ou pendant la nuit.</li>
+            <li>Votre Mac calcule l'export M4B en arrière-plan ou pendant la nuit.</li>
             <li>Une fois le fichier <code>.m4b</code> créé, la lecture consomme <strong>0 % de ressource processeur</strong>, avec une fluidité absolue et zéro saccade.</li>
             <li>Le fichier M4B intègre la couverture, les chapitres, le minutage exact des phrases pour le surlignage synchronisé, et peut s'écouter directement dans Camille Reader, dans l'application Apple Livres ou sur votre iPhone.</li>
           </ul>
         </div>
-        <p><em>Alternative instantanée :</em> Vous pouvez aussi basculer sur les <strong>Voix système de macOS</strong> (dans Réglages &gt; Moteur). Elles ne consomment quasiment aucune ressource système et se lancent immédiatement.</p>
+        <p><em>Alternatives instantanées :</em> Choisissez <strong>Supertonic 3</strong> ou les <strong>Voix système de macOS</strong> dans Réglages &gt; Moteur de lecture.</p>
       </div>
 
       <!-- FAQ 2: Durée de l'export -->
       <div class="faq-item">
-        <div class="faq-q">Pourquoi l'exportation d'un livre audio complet prend-elle plusieurs heures ?</div>
-        <p>Contrairement à un convertisseur audio classique, Camille Reader 2.0 fait générer par un modèle d'IA neuronale locale chaque phonème, chaque respiration et chaque intonation.</p>
-        <p>Pour un ouvrage complet de 300 à 500 pages (représentant 8 à 15 heures d'écoute audio finale), <strong>l'export complet nécessite généralement plusieurs heures de calcul local</strong> selon la puissance de votre puce (M1, M2, M3, M4, Pro ou Max). C'est tout à fait normal : le calcul s'effectue intégralement sur votre machine sans faire appel à un serveur externe.</p>
-        <p><strong>Astuce :</strong> Vous pouvez exporter votre livre <strong>chapitre par chapitre</strong> pour une disponibilité immédiate, ou lancer l'export d'un livre entier en tâche de fond la nuit.</p>
+        <div class="faq-q">Combien de temps prend l'exportation d'un livre audio complet ?</div>
+        <p>Contrairement à un convertisseur audio classique, Camille Reader 2.0 fait générer par un modèle d'IA neuronale locale chaque phonème et chaque intonation :</p>
+        <ul style="margin: 8px 0 12px; padding-left: 20px;">
+          <li><strong>Avec Supertonic 3 :</strong> la synthèse est beaucoup plus rapide (environ 5× à 13× le temps réel) : un livre complet s'exporte généralement en quelques dizaines de minutes.</li>
+          <li><strong>Avec Chatterbox (clonage vocal) :</strong> pour un ouvrage de 300 à 500 pages (8 à 15 heures d'écoute finale), <strong>l'export complet nécessite généralement plusieurs heures de calcul local</strong> selon la puissance de votre puce (M1, M2, M3, M4, Pro ou Max). Le calcul s'effectue intégralement sur votre Mac sans serveur externe.</li>
+        </ul>
+        <p><strong>Astuce :</strong> Avec Chatterbox, vous pouvez exporter votre livre <strong>chapitre par chapitre</strong> pour une disponibilité immédiate, ou lancer l'export d'un livre entier en tâche de fond la nuit (l'export reprend exactement où il s'était arrêté en cas d'interruption).</p>
       </div>
 
       <!-- FAQ 3: IA Générative et Hallucinations -->
@@ -110,13 +117,14 @@
       <!-- FAQ 4: Nombre de voix par langue -->
       <div class="faq-item">
         <div class="faq-q">Combien de voix sont fournies par langue ?</div>
-        <p>Pour éviter les chiffres globaux trompeurs, voici le détail exact par langue :</p>
-        <p>Pour <strong>chaque langue</strong> prise en charge dans la galerie (français, anglais, allemand, espagnol, italien, portugais, néerlandais, russe, chinois, japonais, coréen), vous disposez de <strong>18 voix narratives dédiées</strong> :</p>
+        <p>Pour éviter les chiffres globaux trompeurs, voici le détail exact selon le moteur choisi :</p>
+        <p><strong>Avec Supertonic 3 (31 langues) :</strong> <strong>10 voix intégrées</strong> (5 féminines : Claire, Élise, Solène, Margaux, Jeanne ; 5 masculines : Thomas, Julien, Henri, Lucas, Antoine) utilisables dans toutes les langues prises en charge (avec qualité 6, 8 ou 12 étapes).</p>
+        <p><strong>Avec Chatterbox (23 langues) :</strong> pour <strong>chaque langue</strong> ayant ses échantillons dédiés (allemand, anglais, chinois, coréen, espagnol, français, italien, japonais, portugais, russe), vous disposez de <strong>18 voix narratives</strong> (et les 13 autres langues reprennent ces timbres comme référence) :</p>
         <ul>
           <li><strong>6 profils de narrateurs :</strong> Femme adulte, Homme adulte, Femme enfant, Homme enfant, Femme aînée, Homme aîné.</li>
           <li><strong>3 styles d'interprétation pour chaque profil :</strong> Normal, Roman immersif, et Chuchoté.</li>
         </ul>
-        <p>À ces 18 voix par langue s'ajoutent <strong>13 voix expressives spéciales</strong> (émotions intenses : rire, sanglots, panique, voix rocailleuse, etc.) et le <strong>Studio de voix</strong>, qui vous permet d'enregistrer votre propre voix au micro pour créer des clones vocaux personnalisés à l'infini.</p>
+        <p>À cela s'ajoutent <strong>13 voix expressives spéciales</strong> (émotions intenses : rire, sanglots, panique, voix rocailleuse, etc.) et le <strong>Studio de voix</strong>, qui vous permet d'enregistrer votre propre voix au micro pour créer des clones vocaux personnalisés à l'infini.</p>
       </div>
 
       <!-- FAQ 5: Essai 7 jours et Achat unique -->
@@ -175,10 +183,11 @@
       </form>
     </section>
 
-    <!-- SECTION CONFIDENTIALITE -->
+    <!-- SECTION CONFIDENTIALITE & LICENCES -->
     <section>
-      <h2>Confidentialité</h2>
+      <h2>Confidentialité & Licences</h2>
       <p>Camille Reader 2.0 respecte scrupuleusement votre vie privée. Consultez notre <a href="cr2-privacy.html">Politique de confidentialité complète</a>.</p>
+      <p style="font-size: 0.92rem; color: #555;">Le moteur vocal <strong>Supertonic 3</strong> (Supertone Inc.) est distribué sous <a href="https://huggingface.co/Supertone/supertonic-3/blob/main/LICENSE" target="_blank" rel="noopener">BigScience Open RAIL-M License</a> et son code d'intégration sous licence MIT. Le lexique phonétique français embarqué (<a href="cr2-lexique/cvf_lexique_fr.txt" target="_blank" rel="noopener"><code>cvf_lexique_fr.txt</code></a> · <a href="cr2-lexique/NOTICE_LEXIQUE_FR.txt" target="_blank" rel="noopener">notice</a>) est dérivé de <a href="http://www.lexique.org/" target="_blank" rel="noopener">Lexique 3</a> (B. New, C. Pallier, M. Brysbaert, L. Ferrand) sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
     </section>
   </main>
 </body>
